@@ -1,9 +1,6 @@
 # Author: Kevin Hira
 
-
-# Colours for terminal
-export CLICOLOR=1;
-export LSCOLORS=GxFxCxDxBxegedabagaced;
+[[ -f ~/.bashrc_common ]] && source ~/.bashrc_common
 
 # PATH Setting
 PATH="$PATH:/opt/local/bin:/opt/local/sbin" # MacPorts
@@ -22,44 +19,13 @@ source /usr/local/git/contrib/completion/git-completion.bash
 source /usr/local/git/contrib/completion/git-prompt.sh
 GIT_PS1_SHOWDIRTYSTATE=true
 
-# SSH remote logins
-function sshFoE {
-    ssh $1@shell.foe.auckland.ac.nz
-}
+# Better ls
+alias lsa='ls -plaTh'
 
-# Prompt Settings
-function advprompt {
-    export PS1='\u@\h \w$(__git_ps1)\$ '
-}
-function noprompt {
-    export PS1='➦\$ '
-}
-advprompt
-
-# Java shortcuts
-alias jj="java -jar"
-alias jc="java -cp"
-
-# Maven Shortcuts
-alias mvnq="mvn -q"
-alias mvnp="mvn package"
-alias mvnpq="mvnq package"
-
-alias ..="cd .."
 # Lock shortcut
 function lock {
     /System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend
 }
-
-
-# Double clear
-function cls {
-    clear
-    history -c
-}
-
-# Better ls
-alias lsa='ls -plaTh'
 
 # Redirect festival to MacOS say
 function festival {
@@ -68,7 +34,6 @@ function festival {
 
 # Get CPU Model
 alias cpu_model='sysctl -n machdep.cpu.brand_string'
-
 
 # Open up course folder
 function uni {

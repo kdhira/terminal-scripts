@@ -2,10 +2,7 @@
 
 # If not running interactively, don't do anything
 #[[ $- != *i* ]] && return
-
-# Colour stuff
-export CLICOLOR=1
-export LSCOLORS=GxFxCxDxBxegedabagaced
+[[ -f ~/.bashrc_common ]] && source ~/.bashrc_common
 
 # Reload profile
 function reloadprofile {
@@ -15,26 +12,7 @@ function reloadprofile {
 # Git setup
 source /usr/share/git/completion/git-completion.bash
 source /usr/share/git/completion/git-prompt.sh
-
-# Prompt settings
-#PS1='[\u@\h \W]\$ '
-export PS1='\u@\h \w$(__git_ps1)\$ '
-
-# Java shortcuts
-alias jj='java -jar'
-alias jc='java -cp'
-
-# Maven shortcuts
-alias mvnq='mvn -q'
-alias mvnp='mvn package'
-alias mvnpq='mvnq package'
-alias mvnqp='mvnpq'
-
-# Go up directory
-alias ..='cd ../'
-
-# Double clear
-alias cls='clear && history -c'
+GIT_PS1_SHOWDIRTYSTATE=true
 
 # Better ls
 alias ls='ls --color=auto'
