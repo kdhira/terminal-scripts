@@ -28,7 +28,7 @@ call plug#begin()
 "Git plugins
 Plug 'mattn/webapi-vim' | Plug 'mattn/gist-vim', { 'on': 'Gist' }
 Plug 'tpope/vim-fugitive'
-"Themese
+"Tender Themes
 Plug 'jacoborus/tender.vim'
 ""Autocompletion of quotes, brackets, etc
 Plug 'Raimondi/delimitMate'
@@ -39,7 +39,7 @@ Plug 'scrooloose/nerdcommenter'
 "Autocomplete
 Plug 'Valloric/YouCompleteMe'
 "Easy file and buffer selection
-"Plug 'ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 "For dealing with surrounds
 Plug 'tpope/vim-surround'
 "Need to find time to configure. For . key
@@ -81,7 +81,9 @@ Plug 'thinca/vim-ref'
 "Line diff symbols
 Plug 'airblade/vim-gitgutter'
 "Bottom status
-Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
 
 "Erlang
 Plug 'vim-erlang/vim-erlang-tags', { 'for': 'erlang' }
@@ -169,6 +171,9 @@ set noswapfile
 set nobackup
 
 "Theme
+if (has("termguicolors"))
+ set termguicolors
+endif
 set background=dark
 set t_Co=256
 colorscheme tender
@@ -266,3 +271,8 @@ set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 map <Leader>rt :%retab!<CR>
 map <Leader>ut :set<space>noexpandtab<CR>
 map <Leader>u<space> :set<space>expandtab<CR>
+
+" Status things
+set noshowmode
+let g:airline_theme = 'tender'
+let g:lightline = { 'colorscheme': 'tender' }
