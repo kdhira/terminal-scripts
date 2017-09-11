@@ -2,17 +2,14 @@
 
 # If not running interactively, don't do anything
 #[[ $- != *i* ]] && return
+
+# Import common script
 [[ -f ~/.bashrc_common ]] && source ~/.bashrc_common
 
 # Reload profile
 function reloadprofile {
     source ~/.bash_profile
 }
-
-# Git setup
-source /usr/share/git/completion/git-completion.bash
-source /usr/share/git/completion/git-prompt.sh
-GIT_PS1_SHOWDIRTYSTATE=true
 
 # Better ls
 alias ls='ls --color=auto'

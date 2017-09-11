@@ -1,5 +1,6 @@
 # Author: Kevin Hira
 
+# Import common script
 [[ -f ~/.bashrc_common ]] && source ~/.bashrc_common
 
 # PATH Setting
@@ -13,11 +14,6 @@ export PATH
 function reloadprofile {
     source ~/.bashrc
 }
-
-# Git setup
-source /usr/local/git/contrib/completion/git-completion.bash
-source /usr/local/git/contrib/completion/git-prompt.sh
-GIT_PS1_SHOWDIRTYSTATE=true
 
 # Better ls
 alias lsa='ls -plaTh'

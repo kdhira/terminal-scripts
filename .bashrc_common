@@ -2,8 +2,25 @@
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
+# Git setup
+GIT_COMPLETION_IMPORT=1
+if [ -d "/usr/share/git" ]; then # Arch path to completion
+    source /usr/share/git/completion/git-completion.bash
+    source /usr/share/git/completion/git-prompt.sh
+elif [ -d "/usr/local/git" ]; then # MacOS homebrew path to completion
+    source /usr/local/git/contrib/completion/git-completion.bash
+    source /usr/local/git/contrib/completion/git-prompt.sh
+else
+    GIT_COMPLETION_IMPORT=0
+fi
+
 # PS1
-PS1='\u@\h \w$(__git_ps1)\$ '
+if [ $GIT_COMPLETION_IMPORT -eq 1 ]; then
+    PS1='\u@\h \w$(__git_ps1)\$ '
+    GIT_PS1_SHOWDIRTYSTATE=true
+else
+    PS1='\u@\h \w\$ '
+fi
 
 # Java shortcuts
 alias jj='java -jar'
