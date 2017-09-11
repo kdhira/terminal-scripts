@@ -16,9 +16,6 @@ export PATH
 function reloadprofile {
     source ~/.bashrc
 }
-function tprofedit {
-    atom ~/.bash_profile
-}
 
 # Git setup
 source /usr/local/git/contrib/completion/git-completion.bash
