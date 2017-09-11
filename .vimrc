@@ -136,12 +136,13 @@ set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg
 set wildignore+=*.class,*.o
 
 "Display whitespace
-set listchars=tab:->,trail:~,extends:>,precedes:<
+set showbreak=↪\ 
+set listchars=tab:→\ ,trail:·,extends:>,precedes:<,eol:¬,nbsp:·
 set list
 
 "Line numbers and limits
 set number                      " Show line numbers
-set cc=150                       " Ver line in 80 column
+set cc=120                       " Ver line in 80 column
 set cursorline
 
 "Movement
