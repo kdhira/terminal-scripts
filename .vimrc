@@ -139,7 +139,6 @@ set wildignore+=*.class,*.o
 set showbreak=↪\ 
 set listchars=tab:→\ ,trail:·,extends:>,precedes:<,eol:¬,nbsp:·
 set list
-
 "Line numbers and limits
 set number                      " Show line numbers
 set cc=120                       " Ver line in 80 column
@@ -277,3 +276,12 @@ map <Leader>u<space> :set<space>expandtab<CR>
 set noshowmode
 let g:airline_theme = 'tender'
 let g:lightline = { 'colorscheme': 'tender' }
+
+"Highlight trailing whitespace - http://vim.wikia.com/wiki/Highlight_unwanted_spaces
+:highlight ExtraWhitespace ctermbg=darkred guibg=darkred
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+map <Leader>rw :s/\s\+$/<CR>
