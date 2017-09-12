@@ -43,3 +43,5 @@ function sshFoE {
     ssh $1@shell.foe.auckland.ac.nz
 }
 
+bind 'set show-all-if-ambiguous on'
+bind 'TAB:menu-complete'
