@@ -110,8 +110,8 @@ set history=200
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 set autoindent
 map <Leader>rt :%retab!<CR>
-map <Leader>ut :set<space>noexpandtab<CR>
-map <Leader>u<space> :set<space>expandtab<CR>
+map <Leader>ut :set noexpandtab<CR>
+map <Leader>u<space> :set expandtab<CR>
 
 "Indent entire document
 map <Leader><C-i> mzgg=G'z
