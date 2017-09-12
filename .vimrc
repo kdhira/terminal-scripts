@@ -288,3 +288,5 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 map <Leader>rw :s/\s\+$/<CR>
+
+nmap mm :!mvn package<cr>
