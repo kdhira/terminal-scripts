@@ -174,10 +174,11 @@ set nobackup
 
 "Lightline config
 let g:lightline = {
-    \ 'colorscheme':'tender',
+    \ 'colorscheme': 'tender',
     \ 'active': {
     \   'left': [ [ 'mode', 'paste' ],
-    \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+    \             [ 'gitbranch', 'filename' ],
+    \             [ 'readonly', 'modified' ] ]
     \ },
     \ 'component_function': {
     \   'gitbranch': 'fugitive#head'
