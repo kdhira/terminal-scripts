@@ -28,6 +28,8 @@ call plug#begin()
 "Git plugins
 Plug 'mattn/webapi-vim' | Plug 'mattn/gist-vim', { 'on': 'Gist' }
 Plug 'tpope/vim-fugitive'
+"Nord Theme
+Plug 'arcticicestudio/nord-vim'
 "Tender Themes
 Plug 'jacoborus/tender.vim'
 ""Autocompletion of quotes, brackets, etc
@@ -170,10 +172,24 @@ endif
 set noswapfile
 set nobackup
 
+"Lightline config
+let g:lightline = {
+    \ 'colorscheme':'tender',
+    \ 'active': {
+    \   'left': [ [ 'mode', 'paste' ],
+    \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+    \ },
+    \ 'component_function': {
+    \   'gitbranch': 'fugitive#head'
+    \ },
+    \ }
+
 "Theme
-set background=dark
+set noshowmode
+"set background=dark
 set t_Co=256
 colorscheme tender
+"colorscheme nord
 
 "Set cursorcolumn
 nmap <Leader>scc :set cuc<CR>
@@ -262,10 +278,6 @@ map <Leader>cd :cd %:p:h<cr>:pwd<cr>
 if filereadable("~/.vimrc.local")
     so ~/.vimrc.local
 endif
-
-" Status things
-set noshowmode
-let g:lightline = { 'colorscheme': 'tender' }
 
 "Highlight trailing whitespace - http://vim.wikia.com/wiki/Highlight_unwanted_spaces
 :highlight ExtraWhitespace ctermbg=darkred guibg=darkred
