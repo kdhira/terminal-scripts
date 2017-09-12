@@ -81,8 +81,6 @@ Plug 'thinca/vim-ref'
 "Line diff symbols
 Plug 'airblade/vim-gitgutter'
 "Bottom status
-"Plug 'vim-airline/vim-airline'
-"Plug 'vim-airline/vim-airline-themes'
 Plug 'itchyny/lightline.vim'
 
 "Erlang
@@ -107,10 +105,12 @@ call plug#end()
 set history=200
 
 "Indentation and tabs
-set expandtab
-set softtabstop=4
-set shiftwidth=4
+set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 set autoindent
+map <Leader>rt :%retab!<CR>
+map <Leader>ut :set<space>noexpandtab<CR>
+map <Leader>u<space> :set<space>expandtab<CR>
+
 "Indent entire document
 map <Leader><C-i> mzgg=G'z
 
@@ -263,15 +263,8 @@ if filereadable("~/.vimrc.local")
     so ~/.vimrc.local
 endif
 
-"General tab stuff
-set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
-map <Leader>rt :%retab!<CR>
-map <Leader>ut :set<space>noexpandtab<CR>
-map <Leader>u<space> :set<space>expandtab<CR>
-
 " Status things
 set noshowmode
-let g:airline_theme = 'tender'
 let g:lightline = { 'colorscheme': 'tender' }
 
 "Highlight trailing whitespace - http://vim.wikia.com/wiki/Highlight_unwanted_spaces
