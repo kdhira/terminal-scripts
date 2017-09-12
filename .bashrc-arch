@@ -14,3 +14,7 @@ function reloadprofile {
 # Better ls
 alias ls='ls --color=auto'
 alias lsa='ls -palh'
+
+bind 'set show-all-if-ambiguous on'
+bind 'TAB:menu-complete'
+bind '"\e[Z":menu-complete-backward'
