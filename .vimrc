@@ -187,6 +187,10 @@ let g:lightline = {
     \ },
     \ }
 
+let g:lightline.tabline = {
+    \ 'left': [ [ 'tabs' ] ],
+    \ 'right': [ ] }
+
 "Theme
 set noshowmode
 "set background=dark
