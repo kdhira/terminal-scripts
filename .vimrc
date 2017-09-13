@@ -30,6 +30,8 @@ call plug#begin()
 "Git plugins
 Plug 'mattn/webapi-vim' | Plug 'mattn/gist-vim', { 'on': 'Gist' }
 Plug 'tpope/vim-fugitive'
+"Hybrid Theme
+Plug 'kristijanhusak/vim-hybrid-material'
 "Nord Theme
 Plug 'arcticicestudio/nord-vim'
 "Tender Themes
@@ -177,15 +179,15 @@ set nobackup
 
 "Lightline config
 let g:lightline = {
-    \ 'colorscheme': 'tender',
     \ 'active': {
     \   'left': [ [ 'mode', 'paste' ],
-    \             [ 'gitbranch' , 'readonly', 'modified' ],
+    \             [ 'hunksummay', 'gitbranch', 'readonly', 'modified' ],
     \             [ 'filepathAbbreviated' ] ]
     \ },
     \ 'component_function': {
     \   'gitbranch': 'fugitive#head',
-    \   'filepathAbbreviated': 'LightLineFilename'
+    \   'filepathAbbreviated': 'LightLineFilename',
+    \   'hunksummay': 'GetHunkSummary'
     \ },
     \ }
 
@@ -196,6 +198,16 @@ let g:lightline.tabline = {
 let g:lightline.tab = {
     \ 'active': [ 'tabnum', 'filename', 'modified' ],
     \ 'inactive': [ 'filename', 'modified' ] }
+
+function! GetHunkSummary()
+    let summary = gitgutter#hunk#summary(bufnr("%"))
+    "if summary[0] > 0 || summary[1] > 0 || summary[2] > 0
+    if fugitive#head() != ''
+        return '+' . summary[0] . ' ~' . summary[1] . ' -' . summary[2]
+    else
+        return ''
+    endif
+endfunction
 
 "Taken from https://github.com/itchyny/lightline.vim/issues/87
 function! LightLineFilename()
@@ -222,10 +234,10 @@ endfunction
 
 "Theme
 set noshowmode
-"set background=dark
+set background=dark
 set t_Co=256
 colorscheme tender
-"colorscheme nord
+let g:lightline.colorscheme = 'tender'
 
 "Set cursorcolumn
 nmap <Leader>scc :set cuc<CR>
