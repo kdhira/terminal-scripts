@@ -110,6 +110,7 @@ set history=200
 
 "Indentation and tabs
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+set smarttab smartindent
 set autoindent
 map <Leader>rt :%retab!<CR>
 map <Leader>ut :set noexpandtab<CR>
@@ -179,17 +180,41 @@ let g:lightline = {
     \ 'colorscheme': 'tender',
     \ 'active': {
     \   'left': [ [ 'mode', 'paste' ],
-    \             [ 'gitbranch', 'filename' ],
-    \             [ 'readonly', 'modified' ] ]
+    \             [ 'gitbranch' , 'readonly', 'modified' ],
+    \             [ 'filepathAbbreviated' ] ]
     \ },
     \ 'component_function': {
-    \   'gitbranch': 'fugitive#head'
+    \   'gitbranch': 'fugitive#head',
+    \   'filepathAbbreviated': 'LightLineFilename'
     \ },
     \ }
 
 let g:lightline.tabline = {
     \ 'left': [ [ 'tabs' ] ],
     \ 'right': [ ] }
+
+let g:lightline.tab = {
+    \ 'active': [ 'tabnum', 'filename', 'modified' ],
+    \ 'inactive': [ 'filename', 'modified' ] }
+
+"Taken from https://github.com/itchyny/lightline.vim/issues/87
+function! LightLineFilename()
+  let name = ""
+    let subs = split(expand('%'), "/")
+    let i = 1
+    for s in subs
+        let parent = name
+        if  i == len(subs)
+            let name = parent . '/' . s
+        elseif i == 1
+            let name = s
+        else
+            let name = parent . '/' . strpart(s, 0, 2)
+        endif
+        let i += 1
+    endfor
+  return name
+endfunction
 
 "Theme
 set noshowmode
