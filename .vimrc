@@ -205,7 +205,11 @@ function! LightLineFilename()
     for s in subs
         let parent = name
         if  i == len(subs)
-            let name = parent . '/' . s
+            if i == 1
+                let name = s
+            else
+                let name = parent . '/' . s
+            endif
         elseif i == 1
             let name = s
         else
