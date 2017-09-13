@@ -180,7 +180,11 @@ let g:lightline = {
     \ 'active': {
     \   'left': [ [ 'mode', 'paste' ],
     \             [ 'hunksummay', 'gitbranch', 'readonly', 'modified' ],
-    \             [ 'filepathAbbreviated' ] ]
+    \             [ 'filepathAbbreviated' ] ],
+    \ 'right': [ [ 'lineinfo' ],
+    \            [ 'percent' ],
+    \            [ 'fileformat', 'fileencoding', 'filetype' ],
+    \            [ 'spell' ] ]
     \ },
     \ 'component_function': {
     \   'gitbranch': 'fugitive#head',
