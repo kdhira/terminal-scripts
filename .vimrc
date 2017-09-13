@@ -5,6 +5,8 @@
 syntax on
 set nocompatible
 
+set mouse=a
+
 filetype on
 filetype plugin on
 
