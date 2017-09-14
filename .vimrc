@@ -214,6 +214,9 @@ endfunction
 "Taken from https://github.com/itchyny/lightline.vim/issues/87
 function! LightLineFilename()
   let name = ""
+  if expand('%') =~ '^/'
+      let name = '/'
+  endif
     let subs = split(expand('%'), "/")
     let i = 1
     for s in subs
@@ -225,9 +228,9 @@ function! LightLineFilename()
                 let name = parent . '/' . s
             endif
         elseif i == 1
-            let name = s
+            let name = parent . strpart(s, 0, 1)
         else
-            let name = parent . '/' . strpart(s, 0, 2)
+            let name = parent . '/' . strpart(s, 0, 1)
         endif
         let i += 1
     endfor
