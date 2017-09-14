@@ -351,3 +351,11 @@ autocmd BufWinLeave * call clearmatches()
 map <Leader>rw :s/\s\+$/<CR>
 
 nmap mm :!mvn package<cr>
+
+"Ultisnips Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<c-k>"
+let g:UltiSnipsJumpForwardTrigger="<c-l>"
+let g:UltiSnipsJumpBackwardTrigger="<c-h>"
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
