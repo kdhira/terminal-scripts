@@ -203,8 +203,9 @@ let g:lightline.tab = {
 
 function! GetHunkSummary()
     let summary = gitgutter#hunk#summary(bufnr("%"))
-    "if summary[0] > 0 || summary[1] > 0 || summary[2] > 0
-    if fugitive#head() != ''
+    "See vim-gitgutter/autoload/gitgutter/diff.vim#L62 for info about
+    "getbufvar
+    if fugitive#head() != '' && gitgutter#utility#getbufvar(bufnr("%"), 'tracked', 0)
         return '+' . summary[0] . ' ~' . summary[1] . ' -' . summary[2]
     else
         return ''
@@ -235,6 +236,14 @@ function! LightLineFilename()
         let i += 1
     endfor
   return name
+endfunction
+
+command! LightlineReload call LightlineReload()
+
+function! LightlineReload()
+  call lightline#init()
+  call lightline#colorscheme()
+  call lightline#update()
 endfunction
 
 "Theme
