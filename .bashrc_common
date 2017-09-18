@@ -38,6 +38,9 @@ alias ..='cd ../'
 # Double clear
 alias cls='clear && history -c'
 
+# :q to exit
+alias :q='exit'
+
 # SSH remote logins
 function sshFoE {
     ssh $1@shell.foe.auckland.ac.nz
