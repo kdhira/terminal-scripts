@@ -250,7 +250,7 @@ endfunction
 set noshowmode
 set background=dark
 set t_Co=256
-colorscheme tender
+colorscheme hybrid_reverse
 let g:lightline.colorscheme = 'tender'
 
 "Set cursorcolumn
@@ -358,4 +358,3 @@ let g:UltiSnipsJumpForwardTrigger="<c-l>"
 let g:UltiSnipsJumpBackwardTrigger="<c-h>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
-
