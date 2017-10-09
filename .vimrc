@@ -146,6 +146,7 @@ set wildignore+=*.class,*.o
 set showbreak=↪\ 
 set listchars=tab:→\ ,trail:·,extends:>,precedes:<,eol:¬,nbsp:·
 set list
+set wrap linebreak
 "Line numbers and limits
 set number                      " Show line numbers
 set cc=120                       " Ver line in 80 column
