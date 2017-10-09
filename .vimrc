@@ -86,6 +86,8 @@ Plug 'thinca/vim-ref'
 Plug 'airblade/vim-gitgutter'
 "Bottom status
 Plug 'itchyny/lightline.vim'
+"Live Markdown
+Plug 'shime/vim-livedown'
 
 "Erlang
 Plug 'vim-erlang/vim-erlang-tags', { 'for': 'erlang' }
@@ -358,3 +360,6 @@ let g:UltiSnipsJumpForwardTrigger="<c-l>"
 let g:UltiSnipsJumpBackwardTrigger="<c-h>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+
+" Map for Livedown
+nmap gm :LivedownToggle<CR>
