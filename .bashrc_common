@@ -31,6 +31,9 @@ alias mvnq='mvn -q'
 alias mvnp='mvn package'
 alias mvnpq='mvnq package'
 alias mvnqp='mvnpq'
+alias mvnc='mvn compile'
+alias mvnqc='mvnq compile'
+alias mvncq='mvnqc'
 
 # Go up directory
 alias ..='cd ../'
