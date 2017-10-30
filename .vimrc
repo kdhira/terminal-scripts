@@ -5,6 +5,8 @@
 syntax on
 set nocompatible
 
+set spell spelllang=en_nz
+
 filetype on
 filetype plugin on
 
