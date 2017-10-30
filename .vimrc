@@ -366,3 +366,7 @@ let g:UltiSnipsEditSplit="vertical"
 
 " Map for Livedown
 nmap gm :LivedownToggle<CR>
+
+" Text wrapping maps
+nmap <Leader>tw :set tw=80<CR>
+nmap <Leader>t0 :set tw=0<CR>
