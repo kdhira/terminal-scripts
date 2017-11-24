@@ -146,7 +146,7 @@ set wildignore+=*.class,*.o
 
 "Display whitespace
 set showbreak=↪\ 
-set listchars=tab:→\ ,trail:·,extends:>,precedes:<,eol:¬,nbsp:·
+set listchars=tab:→\ ,trail:·,extends:>,precedes:<,nbsp:·
 set list
 set wrap linebreak
 "Line numbers and limits
