@@ -17,6 +17,7 @@ function reloadprofile {
 
 # Better ls
 alias lsa='ls -plaTh'
+alias ll='lsa'
 
 # Lock shortcut
 function lock {
