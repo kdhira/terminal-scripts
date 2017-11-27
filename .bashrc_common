@@ -7,7 +7,7 @@ GIT_COMPLETION_IMPORT=1
 if [ -d "/usr/share/git" ]; then # Arch path to completion
     source /usr/share/git/completion/git-completion.bash
     source /usr/share/git/completion/git-prompt.sh
-elif [ -d "/usr/local/git" ]; then # MacOS homebrew path to completion
+elif [ -d "/usr/local/git" ]; then # macOS homebrew path to completion
     source /usr/local/git/contrib/completion/git-completion.bash
     source /usr/local/git/contrib/completion/git-prompt.sh
 elif [ -f "/usr/local/etc/bash_completion" ]; then # work macos homebrew path to completion
