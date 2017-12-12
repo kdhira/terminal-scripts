@@ -15,9 +15,6 @@ set backspace=indent,eol,start
 
 set shell=/bin/bash
 
-"Easy ways of getting into normal mode
-inoremap kk <ESC>
-inoremap jj <ESC>
 let mapleader = "\\"
 
 " Load vim-plug
