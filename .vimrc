@@ -151,7 +151,7 @@ set list
 set wrap linebreak
 "Line numbers and limits
 set number                      " Show line numbers
-set cc=120                      " Ver line in 120 column
+"set cc=120                      " Ver line in 120 column
 set cursorline
 
 "Movement
