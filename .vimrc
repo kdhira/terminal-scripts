@@ -5,7 +5,8 @@
 syntax on
 set nocompatible
 
-set spell spelllang=en_nz
+"set spell spelllang=en_nz
+nmap <Leader>zz :set spell! spelllang=en_nz<CR>
 
 filetype on
 filetype plugin on
