@@ -202,7 +202,7 @@ let g:lightline.tabline = {
 
 let g:lightline.tab = {
     \ 'active': [ 'tabnum', 'filename', 'modified' ],
-    \ 'inactive': [ 'filename', 'modified' ] }
+    \ 'inactive': [ 'tabnum', 'filename', 'modified' ] }
 
 function! GetHunkSummary()
     let summary = gitgutter#hunk#summary(bufnr("%"))
