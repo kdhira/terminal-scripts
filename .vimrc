@@ -370,3 +370,9 @@ nmap gm :LivedownToggle<CR>
 " Text wrapping maps
 nmap <Leader>tw :set tw=80<CR>
 nmap <Leader>t0 :set tw=0<CR>
+
+nmap <F5> gT
+nmap <F6> gt
+
+imap <F5> <ESC>:gT
+imap <F6> <ESC>:gt
