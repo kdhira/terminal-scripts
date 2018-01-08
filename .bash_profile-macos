@@ -5,7 +5,7 @@
 
 # PATH Setting
 PATH="$PATH:/opt/local/bin:/opt/local/sbin" # MacPorts
-PATH="/Users/kevin/bin:$PATH" # Custom bin folders
+PATH="~/bin:$PATH" # Custom bin folders
 PATH="/usr/local/git/bin:$PATH" # Git
 PATH="/Users/kevin/anaconda/bin:$PATH" # Anaconda
 export PATH
