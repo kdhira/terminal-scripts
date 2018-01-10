@@ -220,11 +220,11 @@ endfunction
 
 "Taken from https://github.com/itchyny/lightline.vim/issues/87
 function! LightLineFilename()
-  let name = ""
+  let name = "/"
   if expand('%') =~ '^/'
       let name = '/'
   endif
-    let subs = split(expand('%'), "/")
+    let subs = split(expand('%:p'), "/")
     let i = 1
     for s in subs
         let parent = name
@@ -235,9 +235,9 @@ function! LightLineFilename()
                 let name = parent . '/' . s
             endif
         elseif i == 1
-            let name = parent . strpart(s, 0, 1)
+            let name = parent . strpart(s, 0, 4)
         else
-            let name = parent . '/' . strpart(s, 0, 1)
+            let name = parent . '/' . strpart(s, 0, 4)
         endif
         let i += 1
     endfor
@@ -256,7 +256,7 @@ endfunction
 set noshowmode
 set background=dark
 set t_Co=256
-colorscheme hybrid_reverse
+colorscheme tender
 let g:lightline.colorscheme = 'tender'
 
 "Set cursorcolumn
