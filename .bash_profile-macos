@@ -12,7 +12,7 @@ export PATH
 
 # Profile loading
 function reloadprofile {
-    source ~/.bashrc
+    source ~/.bash_profile
 }
 
 # Better ls
