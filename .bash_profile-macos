@@ -36,3 +36,10 @@ alias cpu_model='sysctl -n machdep.cpu.brand_string'
 function uni {
     cd "`find "/Users/kevin/Google Drive/UoA/SE" -maxdepth 1 -name *"$@"`"
 }
+
+export RBENV_ROOT="$HOME/.rbenv"
+
+if [ -d $RBENV_ROOT ]; then
+  export PATH="$RBENV_ROOT/bin:$PATH"
+  eval "$(rbenv init -)"
+fi
