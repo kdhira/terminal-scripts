@@ -111,15 +111,15 @@ call plug#end()
 set history=200
 
 "Indentation and tabs
-set tabstop=4 softtabstop=4 expandtab
+set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 set smarttab smartindent
 set autoindent
 map <Leader>rt :%retab!<CR>
 map <Leader>ut :set noexpandtab<CR>
 map <Leader>u<space> :set expandtab<CR>
 
-map <Leader>u2 :set ts=2 sts=2<CR>
-map <Leader>u4 :set ts=4 sts=4<CR>
+map <Leader>u2 :set ts=2 sts=2 sw=2<CR>
+map <Leader>u4 :set ts=4 sts=4 sw=4<CR>
 
 "Indent entire document
 map <Leader><C-i> mzgg=G'z
