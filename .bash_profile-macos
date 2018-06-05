@@ -7,6 +7,7 @@
 PATH="$PATH:/opt/local/bin:/opt/local/sbin" # MacPorts
 PATH="~/bin:$PATH" # Custom bin folders
 PATH="/Users/kevin/anaconda/bin:$PATH" # Anaconda
+PATH="$PATH:/System/Library/Frameworks/Python.framework/Versions/2.7/bin"
 export PATH
 
 # Profile loading
