@@ -1,6 +1,7 @@
 # Colours for terminal
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
+export TERM='xterm-256color'
 
 # Git setup
 GIT_COMPLETION_IMPORT=1
