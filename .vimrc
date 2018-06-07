@@ -41,7 +41,7 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 "For commenting lines
 Plug 'scrooloose/nerdcommenter'
 "Autocomplete
-"Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --cs-completer --js-completer' }
 "Easy file and buffer selection
 Plug 'ctrlpvim/ctrlp.vim'
 "For dealing with surrounds
