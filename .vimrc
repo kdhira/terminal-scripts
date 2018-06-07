@@ -259,6 +259,7 @@ set t_Co=256
 colorscheme tender
 let g:lightline.colorscheme = 'tender'
 highlight Normal ctermfg=white ctermbg=black
+highlight! link Visual CursorLine
 
 "Set cursorcolumn
 nmap <Leader>scc :set cuc<CR>
