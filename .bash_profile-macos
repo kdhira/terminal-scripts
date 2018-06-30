@@ -38,6 +38,9 @@ function festival {
     say
 }
 
+# Look at CSR for X509 certs
+alias x509look='openssl x509 -noout -text'
+
 # Get CPU Model
 alias cpu_model='sysctl -n machdep.cpu.brand_string'
 
