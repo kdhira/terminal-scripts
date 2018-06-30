@@ -16,8 +16,13 @@ function reloadprofile {
 }
 
 # Visual Studio Code
-alias vscode='open -a /Applications/Visual\ Studio\ Code.app'
-
+function vscode {
+    ARG="$@"
+    if [[ "$ARG" == "" ]]; then
+        ARG="."
+    fi
+    open -a /Applications/Visual\ Studio\ Code.app "$ARG"
+}
 # Better ls
 alias lsa='ls -plaTh'
 alias ll='lsa'
