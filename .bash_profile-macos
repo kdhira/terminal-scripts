@@ -5,8 +5,8 @@
 
 # PATH Setting
 PATH="$PATH:/opt/local/bin:/opt/local/sbin" # MacPorts
-PATH="~/bin:$PATH" # Custom bin folders
-PATH="~/anaconda/bin:$PATH" # Anaconda
+PATH="$HOME/bin:$PATH" # Custom bin folders
+PATH="$HOME/anaconda/bin:$PATH" # Anaconda
 PATH="$PATH:~/Library/Python/3.6/bin"
 PATH="$PATH:/System/Library/Frameworks/Python.framework/Versions/2.7/bin"
 export PATH
