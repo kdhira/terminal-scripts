@@ -31,7 +31,7 @@ Plug 'tpope/vim-fugitive'
 "Hybrid Theme
 Plug 'kristijanhusak/vim-hybrid-material'
 "Nord Theme
-Plug 'arcticicestudio/nord-vim'
+Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
 "Tender Themes
 Plug 'jacoborus/tender.vim'
 ""Autocompletion of quotes, brackets, etc
@@ -41,7 +41,7 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 "For commenting lines
 Plug 'scrooloose/nerdcommenter'
 "Autocomplete
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --cs-completer --js-completer' }
+"Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --cs-completer --js-completer' }
 "Easy file and buffer selection
 Plug 'ctrlpvim/ctrlp.vim'
 "For dealing with surrounds
