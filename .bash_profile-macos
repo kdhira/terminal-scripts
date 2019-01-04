@@ -23,6 +23,8 @@ function vscode {
     fi
     open -a /Applications/Visual\ Studio\ Code.app "$ARG"
 }
+alias vsc='vscode'
+
 # Better ls
 alias lsa='ls -plaTh'
 alias ll='lsa'
