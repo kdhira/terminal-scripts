@@ -1,0 +1,10 @@
+{
+    "explorer.sortOrder": "mixed",
+    "files.trimFinalNewlines": true,
+    "files.insertFinalNewline": true,
+    "terminal.external.osxExec": "iTerm2.app",
+    "gitlens.defaultDateStyle": "absolute",
+    "editor.renderWhitespace": "boundary",
+    "editor.showFoldingControls": "always",
+    "editor.tabCompletion": "on",
+}
