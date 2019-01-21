@@ -18,6 +18,7 @@ fi
 # Completion
 if [ -f "/usr/local/etc/bash_completion" ]; then
     source /usr/local/etc/bash_completion
+    GIT_COMPLETION_IMPORT=1
 fi
 
 # PS1
