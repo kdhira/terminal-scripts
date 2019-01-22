@@ -10,9 +10,6 @@ PATH="$PATH:~/Library/Python/3.6/bin"
 PATH="$PATH:/System/Library/Frameworks/Python.framework/Versions/2.7/bin"
 export PATH
 
-[[ -f ~/.bash_path ]] && source ~/.bash_path
-
-
 # Profile loading
 function reloadprofile {
     source ~/.bash_profile
