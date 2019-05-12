@@ -377,8 +377,8 @@ nmap <Leader>t0 :set tw=0<CR>
 nmap <F5> gT
 nmap <F6> gt
 
-imap <F5> <ESC>:gT
-imap <F6> <ESC>:gt
+imap <F5> <ESC>gT
+imap <F6> <ESC>gt
 
 let g:ctrlp_prompt_mappings = {
     \ 'AcceptSelection("e")': ['<c-t>'],
