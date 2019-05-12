@@ -23,36 +23,15 @@ fi
 
 # PS1
 if [ $GIT_COMPLETION_IMPORT -eq 1 ]; then
-    #PS1='\u@\h \w$(__git_ps1)\$ '
-    PS1='\[\033[33m\]\u\[\033[37m\]@\[\033[36m\]\h\[\033[0m\] \[\033[36m\]\w\[\033[0m\]$(__git_ps1)\$ '
+    PS1='\[\e[33m\]\u\[\e[2;36m\]@\h\[\e[0m\] \[\e[33m\]\w\[\e[2;37m\]$(__git_ps1)\[\e[0m\]\$ '
     GIT_PS1_SHOWDIRTYSTATE=true
 else
-    PS1='\u@\h \w\$ '
+    PS1='\[\e[0;37m\][\[\e[0;32m\]\u\[\e[0;32m\]@\[\e[0;32m\]\h \[\e[0;37m\]\W\[\e[0;37m\]]$ \[\e[0m\]'
+    #PS1='\u@\h \w\$ '
 fi
-
-# Java shortcuts
-alias jj='java -jar'
-alias jc='java -cp'
-
-# Maven shortcuts
-alias mvnq='mvn -q'
-alias mvnp='mvn package'
-alias mvnpq='mvnq package'
-alias mvnqp='mvnpq'
-alias mvnc='mvn compile'
-alias mvnqc='mvnq compile'
-alias mvncq='mvnqc'
 
 # Go up directory
 alias ..='cd ../'
 
-# Double clear
-alias cls='clear && history -c'
-
 # :q to exit
 alias :q='exit'
-
-# SSH remote logins
-function sshFoE {
-    ssh $1@shell.foe.auckland.ac.nz
-}

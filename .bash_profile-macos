@@ -1,7 +1,10 @@
+#!/bin/bash
 # Author: Kevin Hira
 
 # Import common script
 [[ -f ~/.bashrc_common ]] && source ~/.bashrc_common
+test -f "${HOME}/bin/_ignite_completion" && source "${HOME}/bin/_ignite_completion"
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
 # PATH Setting
 PATH="$PATH:/opt/local/bin:/opt/local/sbin" # MacPorts
@@ -11,6 +14,7 @@ PATH="$PATH:/System/Library/Frameworks/Python.framework/Versions/2.7/bin"
 export PATH
 
 # Profile loading
+alias .b='. ~/.bash_profile'
 function reloadprofile {
     source ~/.bash_profile
 }
@@ -29,32 +33,29 @@ alias vsc='vscode'
 alias lsa='ls -plaTh'
 alias ll='lsa'
 
-# Lock shortcut
-function lock {
-    /System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend
-}
-
-# Redirect festival to MacOS say
-function festival {
-    say
-}
-
-# Look at CSR for X509 certs
-alias x509look='openssl x509 -noout -text'
+alias sslping=': | openssl s_client -showcerts -connect'
 
 # Get CPU Model
 alias cpu_model='sysctl -n machdep.cpu.brand_string'
 
-# Open up course folder
-function uni {
-    cd "`find "/Users/kevin/Google Drive/UoA/SE" -maxdepth 1 -name *"$@"`"
-}
-
 export RBENV_ROOT="$HOME/.rbenv"
-
 if [ -d $RBENV_ROOT ]; then
   export PATH="$RBENV_ROOT/bin:$PATH"
   eval "$(rbenv init -)"
 fi
 
-test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+
+function mvn {
+    sandbox=""
+    if [[ "$1" == '--sandbox' ]]; then
+        sandbox="_sandbox"
+        shift
+    fi
+
+    if [[ "$(pwd)" =~ /Users/kevinhi/dsm/solutions/healthcare-provider-directory* ]]; then
+        echo "Executing HPD Maven" >&2
+        /usr/local/bin/mvn -Drun.profiles=enableswagger,kevinhi,authentication$sandbox $@
+    else
+        /usr/local/bin/mvn $@
+    fi
+}
