@@ -6,7 +6,6 @@ function omzsh_init {
     export ZSH="$HOME/.oh-my-zsh"
     ZSH_THEME="powerlevel9k/powerlevel9k"
     DISABLE_UNTRACKED_FILES_DIRTY="true"
-    plugins=(git)
 }
 
 function pl9k_init {
