@@ -26,62 +26,17 @@ endif
 
 call plug#begin()
 "Git plugins
-"Plug 'mattn/webapi-vim' | Plug 'mattn/gist-vim', { 'on': 'Gist' }
 Plug 'tpope/vim-fugitive'
-"Hybrid Theme
-"Plug 'kristijanhusak/vim-hybrid-material'
-"Nord Theme
-"Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
 "Tender Themes
 Plug 'jacoborus/tender.vim'
 ""Autocompletion of quotes, brackets, etc
 Plug 'Raimondi/delimitMate'
-"File browser
-"Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 "For commenting lines
 Plug 'scrooloose/nerdcommenter'
-"Autocomplete
-"Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --cs-completer --js-completer' }
 "Easy file and buffer selection
 Plug 'ctrlpvim/ctrlp.vim'
 "For dealing with surrounds
 Plug 'tpope/vim-surround'
-"Need to find time to configure. For . key
-"Plug 'tpope/vim-repeat'
-""Handy plugin for moving through camel case words
-"Plug 'camelcasemotion'
-"Show errors, marks, etc in margin
-"Plug 'quickfixsigns'
-"Map , to the last motion
-"Plug 'repeat-motion'
-"Manage TODOs
-"Plug 'TaskList.vim'
-"Syntax checker
-"Plug 'neomake/neomake'
-"For easily moving through a file
-"Plug 'EasyMotion'
-"Integration with tmux windows
-Plug 'christoomey/vim-tmux-navigator'
-"The silver searcher
-Plug 'rking/ag.vim'
-"For working with Ctags
-Plug 'majutsushi/tagbar'
-"For swapping positions of text objects
-Plug 'tommcdo/vim-exchange'
-"Run tmux commands from vim
-Plug 'benmills/vimux'
-"Smart find and replace
-Plug 'tpope/vim-abolish'
-"Traverse the undo/redo tree
-Plug 'sjl/gundo.vim'
-"Helps with tab alignment
-Plug 'godlygeek/tabular'
-"ReplaceWithRegister
-Plug 'vim-scripts/ReplaceWithRegister'
-"Args on own line
-Plug 'FooSoft/vim-argwrap'
-"Reference docs
-Plug 'thinca/vim-ref'
 "Line diff symbols
 Plug 'airblade/vim-gitgutter'
 "Bottom status
@@ -89,22 +44,6 @@ Plug 'itchyny/lightline.vim'
 "Live Markdown
 Plug 'shime/vim-livedown'
 
-"Erlang
-Plug 'vim-erlang/vim-erlang-tags', { 'for': 'erlang' }
-Plug 'vim-erlang/vim-erlang-compiler', { 'for': 'erlang' }
-Plug 'vim-erlang/vim-erlang-omnicomplete', { 'for': 'erlang' }
-Plug 'vim-erlang/vim-erlang-runtime', { 'for': 'erlang' }
-Plug 'vim-erlang/erlang-motions.vim', { 'for': 'erlang' }
-Plug 'vim-erlang/vim-dialyzer', { 'for': 'erlang' }
-Plug 'vim-erlang/vim-rebar', { 'for': 'erlang' }
-
-"Text objects
-Plug 'kana/vim-textobj-user'
-Plug 'b4winckler/vim-angry'
-Plug 'wellle/targets.vim'
-
-"Ultisnips
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
 call plug#end()
 
@@ -284,28 +223,6 @@ noremap <silent><Leader>cn :cnext<CR>
 noremap <Leader>q :copen<CR>
 noremap <Leader>Q :cclose<CR>
 
-"FileTypes
-"web
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType html,hbs set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,htmldjango setlocal tabstop=4 softtabstop=4 shiftwidth=4
-autocmd BufEnter *html map <F11> :setfiletype htmldjango<CR>
-autocmd BufEnter *html map <S-F11> :setfiletype django<CR>
-"Python
-let python_highlight_all = 1
-"Fix double indentation
-let g:pyindent_open_paren = '&sw'
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType python nnoremap <F5> :w<CR>:!python %<CR>
-autocmd FileType python setlocal complete-=i
-autocmd FileType python setlocal complete-=i
-autocmd FileType python setlocal dictionary=~/.vim/dict/python
-autocmd FileType python setlocal complete+=k
-autocmd FileType python setlocal tabstop=4 softtabstop=4 shiftwidth=4
-"Remove trailing whitespace upon saving python file
-autocmd BufWritePre *.py :%s/\s\+$//e
-
 "Make it easier to navigate windows
 map <C-h> <C-w>h
 map <C-j> <C-w>j
@@ -315,7 +232,6 @@ map <C-l> <C-w>l
 "Vimrc stuff
 nmap <silent> <Leader>ev :tabe ~/.vimrc<CR>
 nmap <silent> <Leader>sv :so ~/.vimrc<CR>
-nmap <silent> <Leader>bi :BundleInstall<CR>
 
 "Newline
 map <Leader>o o<Esc>
@@ -358,17 +274,6 @@ autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 map <Leader>rw :s/\s\+$/<CR>
 
-nmap mm :!mvn package<cr>
-
-"Ultisnips Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<c-k>"
-let g:UltiSnipsJumpForwardTrigger="<c-l>"
-let g:UltiSnipsJumpBackwardTrigger="<c-h>"
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
-
-" Map for Livedown
-nmap gm :LivedownToggle<CR>
 
 " Text wrapping maps
 nmap <Leader>tw :set tw=80<CR>
