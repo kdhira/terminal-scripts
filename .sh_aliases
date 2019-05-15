@@ -21,7 +21,7 @@ function vscode {
     if [[ "$ARG" == "" ]]; then
         ARG="."
     fi
-    open -a /Applications/Visual\ Studio\ Code.app "$ARG"
+    code "$ARG"
 }
 alias vsc='vscode'
 
