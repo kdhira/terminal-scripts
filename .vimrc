@@ -44,6 +44,7 @@ Plug 'itchyny/lightline.vim'
 "Live Markdown
 Plug 'shime/vim-livedown'
 
+Plug 'vim-scripts/Blazer'
 
 call plug#end()
 
@@ -193,12 +194,12 @@ endfunction
 
 "Theme
 set noshowmode
-set background=dark
+"set background=dark
 set t_Co=256
-colorscheme tender
+colorscheme blazer
 let g:lightline.colorscheme = 'tender'
-highlight Normal ctermfg=white ctermbg=black
-highlight! link Visual CursorLine
+"highlight Normal ctermfg=white ctermbg=black
+"highlight! link Visual CursorLine
 
 "Set cursorcolumn
 nmap <Leader>scc :set cuc<CR>
