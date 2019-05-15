@@ -26,18 +26,18 @@ endif
 
 call plug#begin()
 "Git plugins
-Plug 'mattn/webapi-vim' | Plug 'mattn/gist-vim', { 'on': 'Gist' }
+"Plug 'mattn/webapi-vim' | Plug 'mattn/gist-vim', { 'on': 'Gist' }
 Plug 'tpope/vim-fugitive'
 "Hybrid Theme
-Plug 'kristijanhusak/vim-hybrid-material'
+"Plug 'kristijanhusak/vim-hybrid-material'
 "Nord Theme
-Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
+"Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
 "Tender Themes
 Plug 'jacoborus/tender.vim'
 ""Autocompletion of quotes, brackets, etc
 Plug 'Raimondi/delimitMate'
 "File browser
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+"Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 "For commenting lines
 Plug 'scrooloose/nerdcommenter'
 "Autocomplete
@@ -47,7 +47,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 "For dealing with surrounds
 Plug 'tpope/vim-surround'
 "Need to find time to configure. For . key
-Plug 'tpope/vim-repeat'
+"Plug 'tpope/vim-repeat'
 ""Handy plugin for moving through camel case words
 "Plug 'camelcasemotion'
 "Show errors, marks, etc in margin
@@ -57,7 +57,7 @@ Plug 'tpope/vim-repeat'
 "Manage TODOs
 "Plug 'TaskList.vim'
 "Syntax checker
-Plug 'neomake/neomake'
+"Plug 'neomake/neomake'
 "For easily moving through a file
 "Plug 'EasyMotion'
 "Integration with tmux windows

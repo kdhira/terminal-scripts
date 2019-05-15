@@ -1,0 +1,41 @@
+#!/bin/sh
+
+# Better ls
+alias lsa='ls -plaTh'
+alias ll='lsa'
+
+alias sslping=': | openssl s_client -showcerts -connect'
+
+# Get CPU Model
+alias cpu_model='sysctl -n machdep.cpu.brand_string'
+
+# Go up directory
+alias ..='cd ../'
+
+# :q to exit
+alias :q='exit'
+
+# Visual Studio Code
+function vscode {
+    ARG="$@"
+    if [[ "$ARG" == "" ]]; then
+        ARG="."
+    fi
+    open -a /Applications/Visual\ Studio\ Code.app "$ARG"
+}
+alias vsc='vscode'
+
+function mvn {
+    sandbox=""
+    if [[ "$1" == '--sandbox' ]]; then
+        sandbox="_sandbox"
+        shift
+    fi
+
+    if [[ "$(pwd)" =~ /Users/kevinhi/dsm/solutions/healthcare-provider-directory* ]]; then
+        echo "Executing HPD Maven" >&2
+        /usr/local/bin/mvn -Drun.profiles=enableswagger,kevinhi,authentication$sandbox $@
+    else
+        /usr/local/bin/mvn $@
+    fi
+}

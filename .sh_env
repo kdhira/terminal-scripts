@@ -1,0 +1,13 @@
+#!/bin/sh
+
+export CLICOLOR=1
+export LSCOLORS=GxFxCxDxBxegedabagaced
+export TERM='xterm-256color'
+
+# PATH Setting
+PATH="$PATH:/opt/local/bin:/opt/local/sbin" # MacPorts
+PATH="$HOME/bin:$PATH" # Custom bin folders
+PATH="$PATH:$HOME/Library/Python/3.7/bin:$HOME/Library/Python/2.7/bin"
+PATH="$PATH:/System/Library/Frameworks/Python.framework/Versions/2.7/bin"
+#PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH
