@@ -7,4 +7,17 @@
     "editor.renderWhitespace": "boundary",
     "editor.showFoldingControls": "always",
     "editor.tabCompletion": "on",
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.configuration.checkProjectSettingsExclusions": false,
+    "workbench.editor.showTabs": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "plantuml.fileExtensions": ".wsd,.pu,.puml,.plantuml,.iuml,.uml",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "explorer.confirmDelete": false,
+    "window.zoomLevel": 0,
+    "explorer.confirmDragAndDrop": false,
+    "python.jediEnabled": false,
+    "extensions.ignoreRecommendations": false,
+    "terminal.integrated.fontFamily": "\"Roboto Mono for Powerline\""
 }
