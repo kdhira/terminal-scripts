@@ -4,10 +4,21 @@ export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 export TERM='xterm-256color'
 
+export IGNITE_PATH="$HOME/dsm/solutions/ignite-dsm:$HOME/dsm/solutions/ignite_communicate"
+
 # PATH Setting
-PATH="$PATH:/opt/local/bin:/opt/local/sbin" # MacPorts
+PATH="$HOME/.rbenv/versions/2.3.1/bin:$PATH"
 PATH="$HOME/bin:$PATH" # Custom bin folders
+PATH="$PATH:/opt/local/bin:/opt/local/sbin" # MacPorts
+PATH="$PATH:/usr/local/opt/python@3.8/bin" # Python3.8
 PATH="$PATH:$HOME/Library/Python/3.7/bin:$HOME/Library/Python/2.7/bin"
 PATH="$PATH:/System/Library/Frameworks/Python.framework/Versions/2.7/bin"
-#PATH=$HOME/bin:/usr/local/bin:$PATH
+PATH="$PATH:/usr/local/opt/ant@1.9/bin"
 export PATH
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export CONFIG_DIR=/Users/kevinhi/dsm/c2a/communicate-aws-config
+export SAM_CLI_TELEMETRY=0

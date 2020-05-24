@@ -4,7 +4,26 @@
 alias lsa='ls -plaTh'
 alias ll='lsa'
 
-alias sslping=': | openssl s_client -showcerts -connect'
+alias b64='base64'
+
+#alias sslping=': | openssl s_client -showcerts -connect'
+
+function sslping {
+    if [[ $# -lt 1 ]]; then
+        echo "Specify target"
+        return 1
+    fi
+    endpoint="$1"
+    if [[ "$endpoint" != *:* ]]; then
+        endpoint="$endpoint:443"
+    fi
+
+    : | openssl s_client -showcerts -connect $endpoint
+}
+
+function sslx509 {
+    sslping $1 | openssl x509 -text
+}
 
 # Get CPU Model
 alias cpu_model='sysctl -n machdep.cpu.brand_string'
@@ -26,16 +45,62 @@ function vscode {
 alias vsc='vscode'
 
 function mvn {
-    sandbox=""
+    #sandbox="_sandbox"
     if [[ "$1" == '--sandbox' ]]; then
         sandbox="_sandbox"
         shift
     fi
 
     if [[ "$(pwd)" =~ /Users/kevinhi/dsm/solutions/healthcare-provider-directory* ]]; then
-        echo "Executing HPD Maven" >&2
-        /usr/local/bin/mvn -Drun.profiles=enableswagger,kevinhi,authentication$sandbox $@
+        echo "Injecting Custom HPD Spring Profiles" >&2
+        JAVA_HOME="`/usr/libexec/java_home`" /usr/local/bin/mvn {-Dspring-boot.run.profiles,-Drun.profiles}=enableswagger,kevinhi,s3fs,authentication$sandbox $@
     else
-        /usr/local/bin/mvn $@
+        JAVA_HOME="`/usr/libexec/java_home`" /usr/local/bin/mvn $@
     fi
+}
+alias mvns='mvn -f "/Users/kevinhi/dsm/solutions/healthcare-provider-directory/hpd-backend/pom.xml" spring-boot:run'
+alias mvnu='mvn -f "/Users/kevinhi/dsm/solutions/healthcare-provider-directory/hpd-frontend/pom.xml" install'
+alias mvnus='mvnu && mvns'
+
+DSM_TICKET_FOLDER="$HOME/dsm/tickets"
+function mkdsm {
+    if [[ $# -lt 1 ]]; then
+        return 1
+    fi
+    mkdir "$DSM_TICKET_FOLDER/DSM-$1"
+
+}
+function dsm {
+    if [[ $# -lt 1 ]]; then
+        return 1
+    fi
+    cd "$DSM_TICKET_FOLDER/DSM-$1"
+}
+
+alias c2a='cd ~/dsm/c2a'
+
+
+function jira {
+    if [[ $# -lt 1 ]]; then
+        open "https://jira.orionhealth.global/"
+        return $?
+    fi
+    query="$1"
+    if [[ $query =~ ^[a-z0-9A-Z]{3,4}-[0-9]{1,5}$ ]]; then
+        open "https://jira.orionhealth.global/browse/$query"
+    else
+        open "https://jira.orionhealth.global/issues/?jql=$*"
+    fi
+
+    return $?
+
+}
+
+
+function rsamd5 {
+    openssl rsa -noout -modulus  $@ | openssl md5
+}
+
+function x509md5 {
+    openssl x509 -noout -modulus  $@ | openssl md5
 }
